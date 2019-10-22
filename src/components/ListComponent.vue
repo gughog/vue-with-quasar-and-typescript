@@ -9,7 +9,7 @@
         expand-separator
       >
         <q-card>
-          <q-card-section>
+          <q-card-section class="bg-grey-4">
             {{ item.desc }}
           </q-card-section>
         </q-card>

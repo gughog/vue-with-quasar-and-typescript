@@ -12,32 +12,34 @@
       </q-btn>
     </q-toolbar>
 
-    <div class="row justify-center q-my-md">
-      <q-input
-        filled
-        v-model="textInput"
-        color="deep-orange"
-        stack-label
-        label="Item"
-        @keydown.enter="$refs.description.focus()"
-        dense
-        class="col-12"
-      />
-      <q-input
-        filled
-        v-model="textDesc"
-        color="deep-orange"
-        label="Description"
-        @keydown.enter="addToData"
-        dense
-        class="col-12"
-        autogrow
-        ref="description"
-      />
+    <div class="row justify-center q-gutter-y-md q-mt-sm">
+      <div class="col-8">
+        <q-input
+          filled
+          v-model="textInput"
+          color="deep-orange"
+          stack-label
+          label="Item"
+          @keydown.enter="$refs.description.focus()"
+          dense
+          class="col-12"
+        />
+        <q-input
+          filled
+          v-model="textDesc"
+          color="deep-orange"
+          label="Description"
+          @keydown.enter="addToData"
+          dense
+          class="col-12 q-mt-xs"
+          type="textarea"
+          ref="description"
+        />
 
-      <q-list v-if="opcoes.length > 0" class="col-12" bordered separator>
+        <q-list v-if="opcoes.length > 0" class="col-12 q-mt-md" bordered separator>
           <ListComponent :optionsData="opcoes" />
-      </q-list>
+        </q-list>
+      </div>
     </div>
   </div>
 </template>
