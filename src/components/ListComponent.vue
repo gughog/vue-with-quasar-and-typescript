@@ -2,11 +2,18 @@
   <div>
     <q-list bordered separator>
 
-      <q-item dense clickable v-ripple v-for="item in optionsData" :key="item.id">
-        <q-item-section>
-          <q-item-label> {{ item.name }} </q-item-label>
-        </q-item-section>
-      </q-item>
+      <q-expansion-item
+        v-for="item in optionsData"
+        :key="item.id"
+        :label="item.name"
+        expand-separator
+      >
+        <q-card>
+          <q-card-section>
+            {{ item.desc }}
+          </q-card-section>
+        </q-card>
+      </q-expansion-item>
     </q-list>
 
   </div>
